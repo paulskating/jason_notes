@@ -1,0 +1,10 @@
+.idea/
+.svn
+*.pyc
+# compiled python files
+*.py[co]
+*.DS_Store
+.DS_Store
+*/.DS_Store
+
+
