@@ -1,8 +1,9 @@
 # _*_ coding: utf-8 _*_
 
 arr = [13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7]
-arr1 = [-1,6]
 
+
+# 分治算法
 def find_max_crossing_subarray(A,low,mid,high):
     sum = 0
     left_sum = A[mid]
@@ -48,5 +49,18 @@ def find_max_subarray(A):
         right = lists_len - 1
         low,high,sum = find_maximun_subarray(A,left,right)
         return A[low:high+1]
+
+# 迭代法,线性
+def find_max_subarray_2(A):
+	boundry = A[0]
+	max_arr = A[0]
+	for i in range(1,len(arr)):
+		if boundry + arr[i] < arr[i]:
+			boundry = arr[i]
+		else:
+			boundry = boundry + arr[i]
+		if max_arr < boundry:
+			max_arr = boundry
+	return max_arr
 
 print find_max_subarray(arr)
