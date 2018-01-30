@@ -52,15 +52,15 @@ def find_max_subarray(A):
 
 # 迭代法,线性
 def find_max_subarray_2(A):
-	boundry = A[0]
-	max_arr = A[0]
-	for i in range(1,len(arr)):
-		if boundry + arr[i] < arr[i]:
-			boundry = arr[i]
-		else:
-			boundry = boundry + arr[i]
-		if max_arr < boundry:
-			max_arr = boundry
-	return max_arr
+    boundry = A[0]
+    max_arr = A[0]
+    for i in range(1,len(arr)):
+        if boundry + arr[i] < arr[i]:
+            boundry = arr[i]
+        else:
+            boundry = boundry + arr[i]
+        if max_arr < boundry:
+            max_arr = boundry
+    return max_arr
 
 print find_max_subarray(arr)
