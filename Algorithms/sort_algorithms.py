@@ -3,7 +3,7 @@ import random
 import time
 
 arr = []
-for index in range(36):
+for index in range(20):
     arr.append(random.randint(0,100))
 
 
@@ -88,6 +88,7 @@ def merge_sort(lists):
     right = merge_sort(lists[mid:])
 
     return merge(left,right)
+print arr
 
 start_1 = time.clock()
 print merge_sort(arr)
