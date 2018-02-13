@@ -12,7 +12,7 @@
 3. 开辟新的虚拟环境: virtualenv [virtualenv-name]
 4. 激活虚拟环境:
     * [类linux]: source [虚拟环境目录]/bin/activate
-    * [windows]: df直接进入到虚拟环境的目录,然后执行activate
+    * dfdfdf
     * 退出虚拟环境: deactivate
 
 ### pip安装flask
