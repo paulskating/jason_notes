@@ -31,3 +31,58 @@
             listen()
         app.run()
     ```
+### 设置debug模式
+1. 在app.run()中传入一个关键字参数debug,app.run(debug=True),就设置当前项目为debug模式.
+2. debug模式的两大功能:
+    * 当程序出现问题的时候,可以在页面中看到错误信息和出错的位置.
+    * 只要修改了项目中的Python文件,程序会自动加载,不需要手动重新启动服务器.
+
+### 使用配置文件:
+1. 新建一个'config.py'文件.
+2. 在主app文件中导入这个文件,并且配置到'app中',示例代码如下:
+    ```
+    import config
+    app.config.from_object(config)
+    ```
+3. 还有许多的其他参数,都是放在这个配置文件中,比如'SECRET_KEY'和'SQLALCHEMY',这些配置,都是在这个文件中.
+
+### url传参数:
+1. 参数的作用: 可以在相同的URL,但是指定不同的参数,来加载不同的数据.
+2. 在flask中如何使用参数:
+    ```
+    @app.route('/article/<id>')
+    def article(id):
+        return u'您请求的参数是: %s' % id
+    ```
+    # 参数需要放在两个尖括号中
+    # 视图函数中需要放和url中参数同名的参数.
+
+### 反转URL:
+1. 什么叫做反转URL: 从视图函数到url的转换叫做反转url
+2. 反转url的用处:
+    * 在页面重定向的时候,会使用url反转.
+    * 在模板中,也会使用url反转.
+
+### 页面跳转和重定向:
+1. 用处: 在用户访问一些需要登录的页面的时候,如果用户没有登录,那么可以让他重定向到登录页面.
+2. 代码实现:
+    ```
+    from flask import redirect,url
+    redirect(url_for('login'))
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
